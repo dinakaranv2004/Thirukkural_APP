@@ -1,0 +1,158 @@
+/* style.css - Thirukkural App Theme Styling */
+
+/* Main Page Background */
+.stApp {
+    background-color: #251d15 !important;
+}
+
+/* Base Font & Title Styling */
+body {
+    background-color: #3E2723;
+    color: #FFFFFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.main-title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    background: linear-gradient(90deg, #FFFFFF, #D4C594);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 2rem;
+    font-family: 'Georgia', serif; /* Ancient look */
+}
+
+/* Content Box (The "Palm Leaf" Kural Box) */
+.kural-box {
+    background-color: #3E2723;
+    border-radius: 8px;
+    padding: 2.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+    border: 2px solid #8B5A2B;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Texture illusion for palm leaf */
+.kural-box::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 20px,
+        rgba(0,0,0,0.05) 20px,
+        rgba(0,0,0,0.05) 21px
+    );
+    pointer-events: none;
+}
+
+/* Verse Text - Etched Ink */
+.verse-text {
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #FFFFFF !important;
+    text-align: center;
+}
+
+/* Ancient Ink Buttons */
+.stButton > button {
+    background-color: #8B5A2B !important;
+    color: #FFFFFF !important;
+    border: 2px solid #D4C594 !important;
+    border-radius: 4px !important;
+    padding: 0.5rem 2rem !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.5) !important;
+}
+.stButton > button:hover, .stButton > button:active {
+    background-color: #A67C52 !important;
+    transform: translate(2px, 2px) !important;
+    box-shadow: none !important;
+}
+
+/* Radios - Fix for single-click unresponsiveness caused by padding */
+/* We target the radio labels directly instead of the wrapper */
+div.stRadio > div {
+    background-color: #3E2723 !important;
+    border-radius: 6px !important;
+    padding: 1rem 1.5rem !important;
+    border: 2px solid #8B5A2B !important;
+    gap: 1.5rem !important;
+}
+div.stRadio label {
+    color: #FFFFFF !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+}
+
+/* Text Inputs */
+.stTextInput div[data-baseweb="input"] {
+    background-color: #271b18 !important;
+    border: 2px solid #8B5A2B !important;
+    border-radius: 6px !important;
+}
+.stTextInput input {
+    color: #FFFFFF !important;
+    font-size: 18px !important;
+    background-color: transparent !important;
+}
+.stTextInput div[data-baseweb="input"]:focus-within {
+    border-color: #D4C594 !important;
+}
+
+/* Force Text colors */
+p, span, div[data-testid="stMarkdownContainer"], [data-testid="stMetricValue"], [data-testid="stMetricLabel"] {
+    color: #FFFFFF !important;
+}
+h1, h2, h3, h4 {
+    color: #D4C594 !important;
+}
+
+/* Sidebar styling - Resetting gaps so labels are clickable */
+[data-testid="stSidebar"] {
+    background-color: #3E2723 !important;
+    border-right: 3px solid #8B5A2B !important;
+}
+[data-testid="stSidebar"] div, [data-testid="stSidebar"] span {
+    color: #FFFFFF !important;
+}
+[data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
+    color: #D4C594 !important;
+}
+
+/* Fix the sidebar radio overlapping padding */
+[data-testid="stSidebar"] div.stRadio > div {
+    padding: 0 !important;
+    gap: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+[data-testid="stSidebar"] div[role="radiogroup"] > label {
+    margin-bottom: 0.8rem !important;
+}
+
+/* Expander styling for Study mode */
+[data-testid="stExpander"] {
+    background-color: #3E2723 !important;
+    border: 2px solid #8B5A2B !important;
+    border-radius: 4px !important;
+    margin-bottom: 10px !important;
+}
+[data-testid="stExpander"] summary p {
+    font-weight: bold !important;
+    font-size: 1.1rem !important;
+    color: #D4C594 !important;
+}
+
+/* Hide auto-advance buttons containing invisible inline code */
+div[data-testid="stButton"]:has(p code) {
+    display: none !important;
+}
