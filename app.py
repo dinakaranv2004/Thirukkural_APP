@@ -25,6 +25,9 @@ genai.configure(api_key=api_key)
 # Page configuration
 st.set_page_config(page_title="Thirukkural Competitive Exam", page_icon="valluvar.png", layout="wide")
 
+# Add the custom sidebar logo
+st.logo("valluvar.png", size="large")
+
 # Load Custom Extracted CSS
 with open("style.css", "r", encoding="utf-8") as f:
     css_content = f.read()
@@ -34,7 +37,7 @@ with open("style.css", "r", encoding="utf-8") as f:
 ui_text = {
     "English": {
         "title": "Thirukkural Competitive Exam",
-        "sidebar_title": "📜 Navigation Modes",
+        "sidebar_title": "Navigation Modes",
         "modes": ["Study 1330 Kurals", "Meaning MCQ", "Classification", "Fill in the Blanks", "Dashboard & Analysis"],
         "lang_toggle": "Language / மொழி",
         
