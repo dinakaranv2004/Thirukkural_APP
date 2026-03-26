@@ -23,7 +23,7 @@ if not api_key:
 genai.configure(api_key=api_key)
 
 # Page configuration
-st.set_page_config(page_title="Thirukkural Competitive Exam", page_icon="📜", layout="wide")
+st.set_page_config(page_title="Thirukkural Competitive Exam", page_icon="valluvar.png", layout="wide")
 
 # Load Custom Extracted CSS
 with open("style.css", "r", encoding="utf-8") as f:
